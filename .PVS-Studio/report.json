@@ -1,0 +1,197 @@
+{
+  "version": 2,
+  "warnings": [
+    {
+      "code": "V009",
+      "cwe": 0,
+      "level": 0,
+      "positions": [
+        {
+          "file": "D:\\JAVA\\Проекты New\\spring_contacts\\src\\main\\java\\org\\example\\model\\Contact.java",
+          "line": 1,
+          "endLine": 1,
+          "column": 1,
+          "endColumn": 1,
+          "navigation": {
+            "previousLine": 0,
+            "currentLine": 0,
+            "nextLine": 0,
+            "columns": 0
+          }
+        }
+      ],
+      "message": "To use free version of PVS-Studio, source code files are required to start with a special comment.",
+      "projects": [],
+      "favorite": false,
+      "falseAlarm": false
+    },
+    {
+      "code": "V009",
+      "cwe": 0,
+      "level": 0,
+      "positions": [
+        {
+          "file": "D:\\JAVA\\Проекты New\\spring_contacts\\src\\main\\java\\org\\example\\service\\ContactService.java",
+          "line": 1,
+          "endLine": 1,
+          "column": 1,
+          "endColumn": 1,
+          "navigation": {
+            "previousLine": 0,
+            "currentLine": 0,
+            "nextLine": 0,
+            "columns": 0
+          }
+        }
+      ],
+      "message": "To use free version of PVS-Studio, source code files are required to start with a special comment.",
+      "projects": [],
+      "favorite": false,
+      "falseAlarm": false
+    },
+    {
+      "code": "V009",
+      "cwe": 0,
+      "level": 0,
+      "positions": [
+        {
+          "file": "D:\\JAVA\\Проекты New\\spring_contacts\\src\\main\\java\\org\\example\\repository\\ContactRepository.java",
+          "line": 1,
+          "endLine": 1,
+          "column": 1,
+          "endColumn": 1,
+          "navigation": {
+            "previousLine": 0,
+            "currentLine": 0,
+            "nextLine": 0,
+            "columns": 0
+          }
+        }
+      ],
+      "message": "To use free version of PVS-Studio, source code files are required to start with a special comment.",
+      "projects": [],
+      "favorite": false,
+      "falseAlarm": false
+    },
+    {
+      "code": "V009",
+      "cwe": 0,
+      "level": 0,
+      "positions": [
+        {
+          "file": "D:\\JAVA\\Проекты New\\spring_contacts\\src\\main\\java\\org\\example\\repository\\impl\\FileContactRepository.java",
+          "line": 1,
+          "endLine": 1,
+          "column": 1,
+          "endColumn": 1,
+          "navigation": {
+            "previousLine": 0,
+            "currentLine": 0,
+            "nextLine": 0,
+            "columns": 0
+          }
+        }
+      ],
+      "message": "To use free version of PVS-Studio, source code files are required to start with a special comment.",
+      "projects": [],
+      "favorite": false,
+      "falseAlarm": false
+    },
+    {
+      "code": "V009",
+      "cwe": 0,
+      "level": 0,
+      "positions": [
+        {
+          "file": "D:\\JAVA\\Проекты New\\spring_contacts\\src\\main\\java\\org\\example\\repository\\impl\\InMemoryContactRepository.java",
+          "line": 1,
+          "endLine": 1,
+          "column": 1,
+          "endColumn": 1,
+          "navigation": {
+            "previousLine": 0,
+            "currentLine": 0,
+            "nextLine": 0,
+            "columns": 0
+          }
+        }
+      ],
+      "message": "To use free version of PVS-Studio, source code files are required to start with a special comment.",
+      "projects": [],
+      "favorite": false,
+      "falseAlarm": false
+    },
+    {
+      "code": "V009",
+      "cwe": 0,
+      "level": 0,
+      "positions": [
+        {
+          "file": "D:\\JAVA\\Проекты New\\spring_contacts\\src\\main\\java\\org\\example\\Main.java",
+          "line": 1,
+          "endLine": 1,
+          "column": 1,
+          "endColumn": 1,
+          "navigation": {
+            "previousLine": 0,
+            "currentLine": 0,
+            "nextLine": 0,
+            "columns": 0
+          }
+        }
+      ],
+      "message": "To use free version of PVS-Studio, source code files are required to start with a special comment.",
+      "projects": [],
+      "favorite": false,
+      "falseAlarm": false
+    },
+    {
+      "code": "V009",
+      "cwe": 0,
+      "level": 0,
+      "positions": [
+        {
+          "file": "D:\\JAVA\\Проекты New\\spring_contacts\\src\\main\\java\\org\\example\\config\\AppConfig.java",
+          "line": 1,
+          "endLine": 1,
+          "column": 1,
+          "endColumn": 1,
+          "navigation": {
+            "previousLine": 0,
+            "currentLine": 0,
+            "nextLine": 0,
+            "columns": 0
+          }
+        }
+      ],
+      "message": "To use free version of PVS-Studio, source code files are required to start with a special comment.",
+      "projects": [],
+      "favorite": false,
+      "falseAlarm": false
+    },
+    {
+      "code": "V009",
+      "cwe": 0,
+      "level": 0,
+      "positions": [
+        {
+          "file": "D:\\JAVA\\Проекты New\\spring_contacts\\src\\main\\java\\org\\example\\service\\impl\\ContactServiceImpl.java",
+          "line": 1,
+          "endLine": 1,
+          "column": 1,
+          "endColumn": 1,
+          "navigation": {
+            "previousLine": 0,
+            "currentLine": 0,
+            "nextLine": 0,
+            "columns": 0
+          }
+        }
+      ],
+      "message": "To use free version of PVS-Studio, source code files are required to start with a special comment.",
+      "projects": [],
+      "favorite": false,
+      "falseAlarm": false
+    }
+  ]
+}
