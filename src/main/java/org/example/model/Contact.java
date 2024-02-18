@@ -1,9 +1,14 @@
 package org.example.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.text.MessageFormat;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Contact implements Comparable<Contact>{
     private String fullName;
     private String phoneNumber;

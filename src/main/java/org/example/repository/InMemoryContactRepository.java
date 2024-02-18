@@ -1,6 +1,9 @@
 package org.example.repository;
 
+import lombok.extern.slf4j.Slf4j;
+import org.example.model.info.Algorithms;
 import org.example.model.Contact;
+import org.example.model.info.NegativeResponse;
 import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,6 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Component
+@Slf4j
 public class InMemoryContactRepository {
     private String patternName = "^([А-ЯЁ][а-яё]+\\s){2}[А-ЯЁ][а-яё]+";
     private String patternEmail = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
@@ -25,39 +29,39 @@ public class InMemoryContactRepository {
             changeOfEmail(contact, reader);
             contacts.add(contact);
         } catch (IOException e) {
-            System.out.println("Ошибка чтения пользовательского ввода!");
+            log.error(NegativeResponse.NEGATIVE_RESPONSE_FILE_READ.getDescription());
         }
     }
 
     private void changeOfName(Contact contact,BufferedReader reader) throws IOException {
-        System.out.println("Введите Фамилию Имя Отчество (Формат ввода: \"Фамилия Имя Отчество\"):");
+        System.out.println(Algorithms.REGEX_NAME.getDescription());
         String fullName = reader.readLine();
         if (fullName.matches(patternName)) {
             contact.setFullName(fullName);
         } else {
-            System.out.println("Фамилия Имя Отчество введены некорректно! ");
+            log.error(NegativeResponse.NEGATIVE_RESPONSE_NAME.getDescription());
             changeOfName(contact, reader);
         }
     }
 
     private void changeOfEmail(Contact contact,BufferedReader reader) throws IOException {
-        System.out.println("Введите email (Формат ввода: \"username@example.com\"):");
+        System.out.println(Algorithms.REGEX_EMAIL.getDescription());
         String email = reader.readLine();
         if (email.matches(patternEmail)) {
             contact.setEmail(email);
         } else {
-            System.out.println("Email введен некорректно!");
+            log.error(NegativeResponse.NEGATIVE_RESPONSE_EMAIL.getDescription());
             changeOfEmail(contact, reader);
         }
     }
 
     private void changeOfPhoneNumber(Contact contact,BufferedReader reader) throws IOException {
-        System.out.println("Введите номер телефона (Формат ввода: \"+71234567890\"):");
+        System.out.println(Algorithms.REGEX_PHONE_NUMBER.getDescription());
         String phoneNumber = reader.readLine();
         if (phoneNumber.matches(patternNumber)) {
             contact.setPhoneNumber(phoneNumber);
         } else {
-            System.out.println("Номер телефона введен некорректно!");
+            log.error(NegativeResponse.NEGATIVE_RESPONSE_PHONE_NUMBER.getDescription());
             changeOfPhoneNumber(contact, reader);
         }
     }

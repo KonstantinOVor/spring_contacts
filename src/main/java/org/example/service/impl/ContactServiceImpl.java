@@ -20,19 +20,21 @@ public class ContactServiceImpl implements ContactService {
         inMemoryContactRepository.saveContact();
     }
 
+    @Override
     public void delete(String email) {
+        fileContactRepository.deleteContact(email);
         inMemoryContactRepository.getContacts().removeIf(contact -> contact.getEmail().equals(email));
     }
-
+    @Override
     public void findAll() {
-        Set<Contact> contacts = inMemoryContactRepository.getContacts();
+        Set<Contact> contacts = fileContactRepository.readContactsFromFile();
         StringBuilder sb = new StringBuilder();
         for (Contact contact : contacts) {
-           sb.append(contact.toString()).append("\n");
+           sb.append(contact.toString()).append(System.lineSeparator());
         }
         System.out.println(sb);
     }
-
+    @Override
     public void saveAllInFile() {
         Set<Contact> contacts = inMemoryContactRepository.getContacts();
         fileContactRepository.saveContact(contacts);
