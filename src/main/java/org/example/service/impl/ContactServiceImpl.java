@@ -2,8 +2,8 @@ package org.example.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.example.model.Contact;
-import org.example.repository.FileContactRepository;
-import org.example.repository.InMemoryContactRepository;
+import org.example.repository.impl.FileContactRepository;
+import org.example.repository.impl.InMemoryContactRepository;
 import org.example.service.ContactService;
 import org.springframework.stereotype.Component;
 import java.util.Set;
@@ -14,7 +14,6 @@ public class ContactServiceImpl implements ContactService {
     private final InMemoryContactRepository inMemoryContactRepository;
     private final FileContactRepository fileContactRepository;
 
-
     @Override
     public void saveInMemory() {
         inMemoryContactRepository.saveContact();
@@ -22,8 +21,8 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public void delete(String email) {
+        inMemoryContactRepository.deleteContact(email);
         fileContactRepository.deleteContact(email);
-        inMemoryContactRepository.getContacts().removeIf(contact -> contact.getEmail().equals(email));
     }
     @Override
     public void findAll() {
@@ -36,8 +35,7 @@ public class ContactServiceImpl implements ContactService {
     }
     @Override
     public void saveAllInFile() {
-        Set<Contact> contacts = inMemoryContactRepository.getContacts();
-        fileContactRepository.saveContact(contacts);
+        fileContactRepository.saveContact();
     }
 }
 

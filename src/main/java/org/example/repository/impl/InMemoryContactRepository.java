@@ -1,9 +1,11 @@
-package org.example.repository;
+package org.example.repository.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.model.info.Algorithms;
 import org.example.model.Contact;
 import org.example.model.info.NegativeResponse;
+import org.example.repository.ContactRepository;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,13 +15,14 @@ import java.util.Set;
 
 @Component
 @Slf4j
-public class InMemoryContactRepository {
+@Primary
+public class InMemoryContactRepository implements ContactRepository {
     private String patternName = "^([А-ЯЁ][а-яё]+\\s){2}[А-ЯЁ][а-яё]+";
     private String patternEmail = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
     private String patternNumber = "\\+\\d{11}";
     private Set<Contact> contacts = new HashSet<>();
 
-
+    @Override
     public void saveContact() {
         Contact contact = new Contact();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -65,8 +68,13 @@ public class InMemoryContactRepository {
             changeOfPhoneNumber(contact, reader);
         }
     }
-
+    @Override
     public Set<Contact> getContacts() {
+
         return contacts;
+    }
+    @Override
+    public void deleteContact(String email) {
+        contacts.removeIf(contact -> contact.getEmail().equals(email));
     }
 }
